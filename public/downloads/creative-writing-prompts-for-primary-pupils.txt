@@ -1,0 +1,4 @@
+Mr Sam Tutorial Center - sample material
+
+This is a placeholder file shipped with the demo seed.
+Upload the real document from the Tutor portal (Materials) to replace it.
