@@ -1,4 +1,4 @@
-import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
+import { and, asc, desc, eq, inArray, or, sql } from "drizzle-orm";
 import { db } from "@/db";
 import {
   announcements,
@@ -287,6 +287,21 @@ export async function listStudentAnnouncements(studentRowId: string, limit = 20)
   const batchIds = enrollmentsRows.map((e) => e.batchId);
   const courseIds = [...new Set(enrollmentsRows.map((e) => e.courseId))];
 
+  const scopeConditions = [
+    sql`${announcements.scope} = 'global'`,
+    sql`( ${announcements.scope} = 'role' and ${announcements.audienceRole} = 'student' )`,
+  ];
+  if (courseIds.length > 0) {
+    scopeConditions.push(
+      sql`( ${announcements.scope} = 'course' and ${announcements.courseId} in ${courseIds} )`,
+    );
+  }
+  if (batchIds.length > 0) {
+    scopeConditions.push(
+      sql`( ${announcements.scope} = 'batch' and ${announcements.batchId} in ${batchIds} )`,
+    );
+  }
+
   return db
     .select({
       id: announcements.id,
@@ -297,12 +312,7 @@ export async function listStudentAnnouncements(studentRowId: string, limit = 20)
       scope: announcements.scope,
     })
     .from(announcements)
-    .where(
-      and(
-        sql`${announcements.publishAt} <= now()`,
-        sql`( ${announcements.scope} = 'global' or ( ${announcements.scope} = 'role' and ${announcements.audienceRole} = 'student' ) or ( ${announcements.scope} = 'course' and ${announcements.courseId} in ${courseIds} ) or ( ${announcements.scope} = 'batch' and ${announcements.batchId} in ${batchIds} ) )`,
-      ),
-    )
+    .where(and(sql`${announcements.publishAt} <= now()`, or(...scopeConditions)))
     .orderBy(desc(announcements.pinned), desc(announcements.publishAt))
     .limit(limit);
 }
