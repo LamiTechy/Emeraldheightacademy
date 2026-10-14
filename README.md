@@ -116,7 +116,7 @@ All seeded accounts use the passwords below (change them in production).
 | Tutor (Coding) | `tutor.grace@emeraldheightacademy.com` | `Tutor@1234` |
 | Student (any of 25) | `aisha.bello@emeraldheightacademy.com`, `tunde.adeleke@emeraldheightacademy.com`, … | `Student@1234` |
 
-The seed creates: 4 courses, 6 batches, 31 enrollments, ~470 attendance rows, assignments with submissions, a 42-question bank, 3 published tests with attempts (plus a draft), announcements, messages, registration/trial/contact requests and full CMS content (news, events, gallery, testimonials, FAQs, fees info).
+The seed creates: 5 courses, 6 batches, 31 enrollments, ~470 attendance rows, assignments with submissions, a 42-question bank, 3 published tests with attempts (plus a draft), announcements, messages, registration/trial/contact requests and full CMS content (news, events, gallery, testimonials, FAQs, fees info).
 
 ## Project structure
 

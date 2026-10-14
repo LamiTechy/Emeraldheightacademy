@@ -65,7 +65,6 @@ export function BatchForm({
             endTime: batch.endTime.slice(0, 5),
             mode: batch.mode as never,
             room: batch.room ?? "",
-            meetingUrl: batch.meetingUrl ?? "",
             capacity: batch.capacity,
             startDate: batch.startDate,
             endDate: batch.endDate,
@@ -81,7 +80,6 @@ export function BatchForm({
             endTime: "18:00",
             mode: "physical",
             room: "",
-            meetingUrl: "",
             capacity: 25,
             startDate: "",
             endDate: "",
@@ -312,19 +310,6 @@ export function BatchForm({
               <FormLabel>Room</FormLabel>
               <FormControl>
                 <Input placeholder="e.g. Hall A" {...field} value={field.value ?? ""} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="meetingUrl"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Meeting URL</FormLabel>
-              <FormControl>
-                <Input placeholder="https://…" {...field} value={field.value ?? ""} />
               </FormControl>
               <FormMessage />
             </FormItem>

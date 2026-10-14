@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { listPublicCourses } from "@/lib/queries/public";
-import { ClockIcon, MonitorSmartphoneIcon, UsersIcon } from "lucide-react";
+import { ClockIcon, UsersIcon } from "lucide-react";
 
 export const metadata = { title: "Courses" };
 
@@ -16,7 +16,7 @@ export default async function CoursesPage() {
       <div className="mb-8 max-w-2xl">
         <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">Our courses</h1>
         <p className="mt-2 text-muted-foreground">
-          Exam preparation and school enrichment — physical, online or hybrid.
+          Exam preparation and school enrichment — taught in person at our Abeokuta centre.
         </p>
       </div>
 
@@ -29,9 +29,6 @@ export default async function CoursesPage() {
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between gap-2">
                   <Badge className="bg-brand-soft text-primary border-none dark:bg-primary/20 dark:text-indigo-200">{c.code}</Badge>
-                  <Badge variant="outline" className="capitalize">
-                    {c.mode}
-                  </Badge>
                 </div>
                 <CardTitle className="text-base">{c.name}</CardTitle>
                 <CardDescription className="capitalize">
@@ -46,9 +43,6 @@ export default async function CoursesPage() {
                   </span>
                   <span className="inline-flex items-center gap-1">
                     <UsersIcon className="size-3.5" /> Small batches
-                  </span>
-                  <span className="inline-flex items-center gap-1">
-                    <MonitorSmartphoneIcon className="size-3.5" /> {c.mode}
                   </span>
                 </div>
               </CardContent>

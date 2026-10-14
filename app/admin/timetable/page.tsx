@@ -21,7 +21,6 @@ export default async function AdminTimetablePage() {
     startTime: r.startTime,
     endTime: r.endTime,
     room: r.room,
-    meetingUrl: r.meetingUrl,
   }));
 
   const formOptions: FormOptions = {

@@ -28,7 +28,7 @@ export default async function AboutPage() {
         </h1>
         <p className="text-lg text-muted-foreground">{siteConfig.tagline}</p>
         <p className="leading-relaxed text-muted-foreground">
-          Founded in {2015}, {siteConfig.name} has helped hundreds of Lagos students prepare for
+          Founded in {2015}, {siteConfig.name} has helped hundreds of Abeokuta students prepare for
           JAMB, WAEC and NECO — and discover a love of learning along the way. We combine small
           batches, experienced tutors and a modern student portal so families always know where
           progress stands. From primary enrichment to exam mastery, every class is designed around
@@ -50,13 +50,13 @@ export default async function AboutPage() {
         <Card className="rounded-2xl border-border shadow-sm">
           <CardContent className="pt-6">
             <p className="font-heading text-3xl font-bold text-primary">2015</p>
-            <p className="text-sm text-muted-foreground">Serving Lagos families since</p>
+            <p className="text-sm text-muted-foreground">Serving Abeokuta families since</p>
           </CardContent>
         </Card>
         <Card className="rounded-2xl border-border shadow-sm">
           <CardContent className="pt-6">
-            <p className="font-heading text-3xl font-bold text-primary">Physical + Online</p>
-            <p className="text-sm text-muted-foreground">Attend from Ikeja or anywhere</p>
+            <p className="font-heading text-3xl font-bold text-primary">In person</p>
+            <p className="text-sm text-muted-foreground">Morning, evening &amp; weekend batches in Abeokuta</p>
           </CardContent>
         </Card>
         <Card className="rounded-2xl border-border shadow-sm">

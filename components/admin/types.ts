@@ -56,7 +56,6 @@ export type BatchView = {
   endTime: string;
   mode: string;
   room: string | null;
-  meetingUrl: string | null;
   capacity: number;
   startDate: string;
   endDate: string;
@@ -94,7 +93,6 @@ export type SlotView = {
   startTime: string;
   endTime: string;
   room: string | null;
-  meetingUrl: string | null;
 };
 
 export type FormOptions = {

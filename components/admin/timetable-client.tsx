@@ -18,7 +18,7 @@ import { SlotForm } from "@/components/admin/slot-form";
 import type { FormOptions, SlotView } from "@/components/admin/types";
 import { apiRequest } from "@/lib/client-api";
 import { DAY_SHORT, WEEK_ORDER, shortTime } from "@/lib/format";
-import { MapPinIcon, MonitorIcon, MoreHorizontalIcon, PlusIcon, Trash2Icon, UserIcon } from "lucide-react";
+import { MapPinIcon, MoreHorizontalIcon, PlusIcon, Trash2Icon, UserIcon } from "lucide-react";
 
 export function TimetableClient({
   rows,
@@ -123,12 +123,6 @@ export function TimetableClient({
                         <div className="flex items-center gap-1 text-xs text-muted-foreground">
                           <MapPinIcon className="size-3" />
                           <span className="truncate">{slot.room}</span>
-                        </div>
-                      ) : null}
-                      {slot.meetingUrl ? (
-                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                          <MonitorIcon className="size-3" />
-                          <span className="truncate">Online</span>
                         </div>
                       ) : null}
                     </div>

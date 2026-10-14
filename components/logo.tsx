@@ -1,9 +1,6 @@
 import { cn } from "@/lib/utils";
+import { LOGO_DATA_URI } from "@/components/logo-data";
 
-/**
- * Placeholder logo — swap the internals for the real brand asset.
- * Recommended: replace the monogram with <Image src="/logo.svg" .../> or an <img>.
- */
 export function Logo({
   className,
   showWordmark = true,
@@ -13,11 +10,15 @@ export function Logo({
 }) {
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <span
-        aria-hidden
-        className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-indigo-600 font-heading text-sm font-bold tracking-tight text-white shadow-sm"
-      >
-        EH
+      <span aria-hidden className="flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-sm">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={LOGO_DATA_URI}
+          alt="Emerald Height Academy logo"
+          width={36}
+          height={36}
+          className="size-full object-cover"
+        />
       </span>
       {showWordmark ? (
         <span className="flex flex-col leading-none">

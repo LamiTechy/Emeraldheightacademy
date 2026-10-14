@@ -28,7 +28,6 @@ export default async function AdminBatchesPage({
     endTime: r.endTime,
     mode: r.mode,
     room: r.room,
-    meetingUrl: r.meetingUrl,
     capacity: r.capacity,
     startDate: r.startDate,
     endDate: r.endDate,

@@ -22,7 +22,6 @@ import {
   ListChecksIcon,
   MapPinIcon,
   UsersIcon,
-  VideoIcon,
 } from "lucide-react";
 
 export default async function TutorDashboardPage() {
@@ -120,13 +119,6 @@ export default async function TutorDashboardPage() {
                         <Badge variant="secondary" className="gap-1 text-xs font-normal">
                           <MapPinIcon className="size-3" /> {s.slot.room}
                         </Badge>
-                      ) : null}
-                      {s.slot.meetingUrl ? (
-                        <Button asChild size="sm" variant="outline" className="h-7">
-                          <a href={s.slot.meetingUrl} target="_blank" rel="noreferrer">
-                            <VideoIcon className="size-3.5" /> Join
-                          </a>
-                        </Button>
                       ) : null}
                     </div>
                   </li>

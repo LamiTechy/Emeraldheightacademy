@@ -33,7 +33,6 @@ export default async function RegisterPage() {
               id: c.id,
               name: c.name,
               code: c.code,
-              mode: c.mode,
             }))}
           />
         </CardContent>

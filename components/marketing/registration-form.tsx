@@ -19,7 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { apiRequest } from "@/lib/client-api";
 import { publicRegistrationSchema, type PublicRegistrationInput } from "@/lib/validators/public";
 
-type CourseOption = { id: string; name: string; code: string; mode: string };
+type CourseOption = { id: string; name: string; code: string };
 
 export function RegistrationForm({ courses }: { courses: CourseOption[] }) {
   const router = useRouter();
@@ -135,9 +135,7 @@ export function RegistrationForm({ courses }: { courses: CourseOption[] }) {
                   />
                   <span>
                     <span className="font-medium">{c.name}</span>
-                    <span className="block text-xs text-muted-foreground">
-                      {c.code} · {c.mode}
-                    </span>
+                    <span className="block text-xs text-muted-foreground">{c.code}</span>
                   </span>
                 </label>
               ))}

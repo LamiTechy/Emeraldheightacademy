@@ -82,7 +82,6 @@ export type TutorSlotView = {
   startTime: string;
   endTime: string;
   room: string | null;
-  meetingUrl: string | null;
   batchCode: string;
   batchName: string;
   courseName: string;

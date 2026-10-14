@@ -68,7 +68,7 @@ export async function PATCH(
       startTime: data.startTime ? normalizeTime(data.startTime) : undefined,
       endTime: data.endTime ? normalizeTime(data.endTime) : undefined,
       room: data.room,
-      meetingUrl: data.meetingUrl,
+      meetingUrl: null,
       validFrom: data.validFrom,
       validTo: data.validTo,
       updatedAt: new Date(),

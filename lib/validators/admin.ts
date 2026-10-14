@@ -99,11 +99,6 @@ const batchBase = z.object({
   endTime: timeField,
   mode: z.enum(courseModeEnum.enumValues).default("physical"),
   room: optionalText(80),
-  meetingUrl: z
-    .string()
-    .trim()
-    .url("Enter a valid URL")
-    .nullish(),
   capacity: z.coerce.number().int().min(1).max(500).default(30),
   startDate: z.iso.date("Pick a start date"),
   endDate: z.iso.date("Pick an end date"),
@@ -153,11 +148,6 @@ const slotBase = z.object({
   startTime: timeField,
   endTime: timeField,
   room: optionalText(80),
-  meetingUrl: z
-    .string()
-    .trim()
-    .url("Enter a valid URL")
-    .nullish(),
   validFrom: z.iso.date().nullish(),
   validTo: z.iso.date().nullish(),
 });

@@ -51,7 +51,7 @@ export async function PATCH(
           endTime: data.endTime ? normalizeTime(data.endTime) : undefined,
           mode: data.mode,
           room: data.room,
-          meetingUrl: data.meetingUrl,
+          meetingUrl: null,
           capacity: data.capacity,
           startDate: data.startDate,
           endDate: data.endDate,

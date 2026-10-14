@@ -60,7 +60,6 @@ export function SlotForm({
             startTime: shortTime(slot.startTime),
             endTime: shortTime(slot.endTime),
             room: slot.room ?? "",
-            meetingUrl: slot.meetingUrl ?? "",
             validFrom: undefined,
             validTo: undefined,
           }
@@ -71,7 +70,6 @@ export function SlotForm({
             startTime: "16:00",
             endTime: "18:00",
             room: "",
-            meetingUrl: "",
             validFrom: undefined,
             validTo: undefined,
           },
@@ -219,19 +217,6 @@ export function SlotForm({
               <FormLabel>Room</FormLabel>
               <FormControl>
                 <Input placeholder="e.g. Hall A" {...field} value={field.value ?? ""} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="meetingUrl"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Meeting URL</FormLabel>
-              <FormControl>
-                <Input placeholder="https://…" {...field} value={field.value ?? ""} />
               </FormControl>
               <FormMessage />
             </FormItem>

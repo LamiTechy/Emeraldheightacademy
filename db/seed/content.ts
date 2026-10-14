@@ -152,6 +152,57 @@ export const COURSES = [
     featured: true,
     sortOrder: 3,
   },
+  {
+    key: "postutme",
+    code: "PUTME-PREP",
+    name: "Post-UTME Screening Prep",
+    slug: "post-utme-prep",
+    category: "exam_prep" as (typeof courseCategoryEnum.enumValues)[number],
+    description:
+      "Targeted preparation for university Post-UTME screening tests with departmental past questions, oral practice and timed CBT drills.",
+    longDescription:
+      "A 6-week sprint for candidates who already sat UTME. We drill departmental past questions, general papers and screening-format CBTs, plus mock screening sessions so nothing on test day is a surprise.",
+    durationWeeks: 6,
+    scheduleSummary: "Evening weekday classes (Tue & Thu), Saturday mock screening tests",
+    mode: "hybrid" as (typeof courseModeEnum.enumValues)[number],
+    syllabus: [
+      "Departmental past questions (5 years)",
+      "Use of English: screening format",
+      "Quantitative reasoning drills",
+      "Current affairs & general paper",
+      "Oral / interview technique",
+      "Timed CBT screening simulations",
+      "Mock Post-UTME exams",
+    ],
+    featured: true,
+    sortOrder: 4,
+  },
+  {
+    key: "jupeb",
+    code: "JUPEB-PREP",
+    name: "JUPEB Programme",
+    slug: "jupeb-prep",
+    category: "university" as (typeof courseCategoryEnum.enumValues)[number],
+    description:
+      "Full JUPEB A-level programme offering three to four subject combinations with continuous assessment for direct entry into 200 level.",
+    longDescription:
+      "A one-year A-level programme that prepares candidates for JUPEB examinations and direct entry admission into 200 level. Lectures run with university-style coursework, weekly tests and a strong emphasis on essay and practical work.",
+    durationWeeks: 32,
+    scheduleSummary: "Weekday morning lectures (Mon–Fri), Saturday practicals & tutorials",
+    mode: "hybrid" as (typeof courseModeEnum.enumValues)[number],
+    syllabus: [
+      "Use of English (General Paper)",
+      "Biology: theory & practicals",
+      "Chemistry: theory & practicals",
+      "Physics: theory & practicals",
+      "Mathematics",
+      "Economics",
+      "Literature-in-English",
+      "Continuous assessment & mock exams",
+    ],
+    featured: true,
+    sortOrder: 5,
+  },
 ] as const;
 
 export const BATCHES = [
@@ -165,7 +216,7 @@ export const BATCHES = [
     endTime: "12:00:00",
     mode: "hybrid" as (typeof courseModeEnum.enumValues)[number],
     room: "Hall A",
-    meetingUrl: "https://meet.google.com/jamb-morning",
+    meetingUrl: null,
     capacity: 25,
   },
   {
@@ -178,7 +229,7 @@ export const BATCHES = [
     endTime: "19:00:00",
     mode: "hybrid" as (typeof courseModeEnum.enumValues)[number],
     room: "Hall B",
-    meetingUrl: "https://meet.google.com/jamb-evening",
+    meetingUrl: null,
     capacity: 25,
   },
   {
@@ -191,7 +242,7 @@ export const BATCHES = [
     endTime: "13:00:00",
     mode: "hybrid" as (typeof courseModeEnum.enumValues)[number],
     room: "Hall A",
-    meetingUrl: "https://meet.google.com/waec-weekend",
+    meetingUrl: null,
     capacity: 20,
   },
   {
@@ -784,7 +835,7 @@ export const QUESTIONS: SeedQuestion[] = [
 export const ANNOUNCEMENTS = [
   {
     title: "New Term Registration Is Open",
-    body: "Registration for the new term is now open at the centre office and online. Secure your seat early — batches fill up quickly, especially the JAMB morning class. Priority goes to returning students until Friday.",
+    body: "Registration for the new term is now open at the centre office and on this site. Secure your seat early — batches fill up quickly, especially the JAMB morning class. Priority goes to returning students until Friday.",
     scope: "global" as const,
     pinned: true,
   },
@@ -839,7 +890,7 @@ export const EVENTS = [
     slug: "open-day-campus-tour",
     description:
       "Tour our classrooms and lab, meet the tutors, and get free advice on the right batch for your child. Walk-ins welcome between 10 AM and 3 PM.",
-    location: "Emerald Height Academy, Ikeja",
+    location: "Emerald Height Academy, Abeokuta",
     daysFromNow: 10,
     status: "upcoming" as const,
   },
@@ -908,9 +959,9 @@ export const FAQS = [
     category: "Registration",
   },
   {
-    question: "How do classes work — physical or online?",
+    question: "How do classes work?",
     answer:
-      "Most batches are hybrid: you attend in person at the centre and can join live online when you cannot come. Primary batches are fully physical. Each batch's mode is shown on its course page and timetable.",
+      "All classes are taught in person at our Abeokuta centre. Batches run in the mornings, evenings and on Saturdays so you can pick what fits your family's schedule; primary groups meet after school.",
     category: "Classes",
   },
   {
@@ -947,10 +998,10 @@ export const SETTINGS_DATA: Record<string, unknown> = {
     phone: "+234 803 000 0001",
     whatsapp: "+234 803 000 0001",
     email: "hello@emeraldheightacademy.com",
-    address: "12 Education Avenue, Ikeja, Lagos",
-    city: "Lagos, Nigeria",
+    address: "12 Education Avenue, Abeokuta, Ogun State",
+    city: "Abeokuta, Nigeria",
     establishedYear: 2015,
-    mapQuery: "Ikeja, Lagos, Nigeria",
+    mapQuery: "Abeokuta, Ogun, Nigeria",
     socials: {
       facebook: "https://facebook.com/mrsamtutorial",
       instagram: "https://instagram.com/mrsamtutorial",
@@ -961,12 +1012,12 @@ export const SETTINGS_DATA: Record<string, unknown> = {
     title: "Fees & How to Pay",
     body: `Fees at Emerald Height Academy are paid offline — there is no online payment on this website.
 
-1. Submit the registration form online (or visit the office).
+1. Submit the registration form on this site (or visit the office).
 2. The office confirms your batch and seat, then gives you the fee schedule for your course.
 3. Pay at the centre office (cash or POS) or by bank transfer to the account details issued by the office.
 4. Bring your payment teller/receipt to the office so your enrolment and portal access can be activated.
 
-For the current fee schedule for any course, call or WhatsApp the office, or visit us at 12 Education Avenue, Ikeja.`,
+For the current fee schedule for any course, call or WhatsApp the office, or visit us at 12 Education Avenue, Abeokuta.`,
     lastUpdated: null,
   },
   features: {

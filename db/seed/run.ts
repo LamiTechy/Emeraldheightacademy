@@ -163,18 +163,18 @@ export async function runSeed(client: DBTx): Promise<void> {
       .returning({ id: s.users.id, name: s.users.name });
 
     const schools = [
-      "Ikeja Senior Grammar School",
-      "Maryland Comprehensive Secondary School",
+      "Abeokuta Senior Grammar School",
+      "Abeokuta Comprehensive Secondary School",
       "St. Clare's Primary School",
-      "Opebi High School",
+      "Kuto High School",
       "Greenfield International School",
     ];
     const streets = [
-      "14 Adeniyi Jones Avenue",
-      "7 Opebi Road",
-      "23 Allen Avenue",
-      "5 Aguda Street",
-      "19 Ogba Road",
+      "14 Oba Ademola Adetokunboh Avenue",
+      "7 M.K.O. Abiola Way",
+      "23 Ikija Road",
+      "5 Sapon Road",
+      "19 Kuto Road",
     ];
 
     const studentProfiles = STUDENT_NAMES.map((name, i) => {
@@ -200,7 +200,7 @@ export async function runSeed(client: DBTx): Promise<void> {
         gender: (n % 2 === 0 ? "male" : "female") as (typeof s.genderEnum.enumValues)[number],
         dateOfBirth: isoDay(new Date(CURRENT_YEAR - age, (n * 3) % 12, ((n * 7) % 27) + 1)),
         school: pick(rng, schools),
-        address: `${pick(rng, streets)}, Ikeja, Lagos`,
+        address: `${pick(rng, streets)}, Abeokuta, Ogun State`,
         guardianName: isMinor ? `Mr. & Mrs. ${surname}` : null,
         guardianPhone: isMinor ? `+23480${pad(3000000 + n * 137, 7)}` : null,
         guardianRelationship: isMinor ? "Parent" : null,
@@ -426,7 +426,7 @@ export async function runSeed(client: DBTx): Promise<void> {
           tutorId,
           title: title2,
           instructions:
-            "Complete all questions. For online students, type your answers in the submission box or upload a scanned copy.",
+            "Complete all questions. Type your answers in the submission box or upload a scanned copy.",
           dueAt: addDays(today, 5),
           points: 20,
           status: "published",
@@ -774,7 +774,7 @@ export async function runSeed(client: DBTx): Promise<void> {
         senderId: studentUserRows[2]!.id,
         recipientId: tutorRows[0]!.id,
         subject: "Question about Thursday's class",
-        body: "Good afternoon sir, will Thursday's evening class cover quadratic graphs? I may join online because of a school event.",
+        body: "Good afternoon sir, will Thursday's evening class cover quadratic graphs? I may not be able to attend because of a school event.",
         readAt: null,
       },
     ]);

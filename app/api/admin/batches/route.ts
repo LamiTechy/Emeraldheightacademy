@@ -35,7 +35,7 @@ export async function POST(request: Request) {
           endTime: normalizeTime(data.endTime),
           mode: data.mode,
           room: data.room ?? null,
-          meetingUrl: data.meetingUrl ?? null,
+          meetingUrl: null,
           capacity: data.capacity,
           startDate: data.startDate,
           endDate: data.endDate,

@@ -16,7 +16,7 @@ import {
   BookOpenIcon,
   CalendarCheckIcon,
   CheckCircle2Icon,
-  MonitorSmartphoneIcon,
+  MapPinIcon,
   QuoteIcon,
   SparklesIcon,
   StarIcon,
@@ -32,7 +32,7 @@ const features = [
     icon: TargetIcon,
     title: "Exam-focused prep",
     description:
-      "Structured JAMB, WAEC and NECO tracks with past questions, timed mocks and detailed feedback.",
+      "Structured JAMB, WAEC, NECO, Post-UTME and JUPEB tracks with past questions, timed mocks and detailed feedback.",
     color: "bg-indigo-100 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-300",
   },
   {
@@ -43,10 +43,10 @@ const features = [
     color: "bg-sky-100 text-sky-600 dark:bg-sky-950 dark:text-sky-300",
   },
   {
-    icon: MonitorSmartphoneIcon,
-    title: "Physical & online",
+    icon: MapPinIcon,
+    title: "In-person classes",
     description:
-      "Attend at Ikeja, join live online, or a hybrid of both — your schedule, your choice.",
+      "Morning, evening and weekend batches at our Abeokuta centre — your schedule, your choice.",
     color: "bg-violet-100 text-violet-600 dark:bg-violet-950 dark:text-violet-300",
   },
   {
@@ -60,7 +60,7 @@ const features = [
     icon: UsersIcon,
     title: "Proven centre",
     description:
-      "Serving Lagos students since 2015 with consistent results and repeat families.",
+      "Serving Abeokuta students since 2015 with consistent results and repeat families.",
     color: "bg-rose-100 text-rose-600 dark:bg-rose-950 dark:text-rose-300",
   },
   {
@@ -108,7 +108,7 @@ export default async function HomePage() {
           <div className="max-w-3xl space-y-8">
             <Badge className="inline-flex items-center gap-1.5 border-primary/20 bg-card px-4 py-1.5 text-sm font-medium text-primary shadow-sm">
               <span className="size-1.5 rounded-full bg-warn" />
-              {siteConfig.city} · Physical · Online · Hybrid
+              {siteConfig.city} · Morning, evening &amp; weekend batches
             </Badge>
             <h1 className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl lg:leading-[1.1]">
               Where ambition meets
@@ -116,7 +116,7 @@ export default async function HomePage() {
               <span className="text-primary">exceptional teaching.</span>
             </h1>
             <p className="max-w-2xl text-lg text-muted-foreground sm:text-xl">
-              JAMB/WAEC/NECO preparation and primary enrichment at{" "}
+              JAMB/WAEC/NECO, Post-UTME and JUPEB preparation and primary enrichment at{" "}
               <span className="font-semibold text-foreground">{siteConfig.name}</span> — with a
               live portal for students, tutors and the centre office.
             </p>
@@ -143,7 +143,8 @@ export default async function HomePage() {
                 <CheckCircle2Icon className="size-4 text-primary" /> Small batches
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <CheckCircle2Icon className="size-4 text-primary" /> Progress tracked online
+                <CheckCircle2Icon className="size-4 text-primary" /> Progress tracked in the
+                portal
               </span>
             </div>
           </div>
@@ -236,9 +237,6 @@ export default async function HomePage() {
                       <Badge className="bg-brand-soft text-primary border-none dark:bg-primary/20 dark:text-indigo-200">
                         {c.code}
                       </Badge>
-                      <Badge variant="outline" className="capitalize">
-                        {c.mode}
-                      </Badge>
                     </div>
                     <CardTitle className="text-lg">{c.name}</CardTitle>
                     <CardDescription className="capitalize">
@@ -314,7 +312,7 @@ export default async function HomePage() {
                 </h2>
                 <p className="text-base leading-relaxed text-muted-foreground">
                   Fees are paid offline at the centre — no online payment required. Register
-                  online, confirm your seat, then pay at the office or by bank transfer.
+                  here, confirm your seat, then pay at the office or by bank transfer.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">

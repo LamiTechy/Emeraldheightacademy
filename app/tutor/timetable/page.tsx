@@ -3,12 +3,11 @@ export const instant = false;
 import { PageHeader } from "@/components/layout/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { requireUser } from "@/lib/auth/session";
 import { listTutorWeek } from "@/lib/queries/tutor";
 import { DAY_SHORT, WEEK_ORDER, shortTime } from "@/lib/format";
-import { MapPinIcon, VideoIcon } from "lucide-react";
+import { MapPinIcon } from "lucide-react";
 
 export default async function TutorTimetablePage() {
   const user = await requireUser("tutor");
@@ -56,13 +55,6 @@ export default async function TutorTimetablePage() {
                           <div className="min-w-0">
                             <p className="truncate text-sm font-medium">{course.name}</p>
                             <p className="text-xs text-muted-foreground">{batch.code}</p>
-                            {slot.meetingUrl ? (
-                              <Button asChild size="sm" variant="outline" className="mt-1.5 h-7">
-                                <a href={slot.meetingUrl} target="_blank" rel="noreferrer">
-                                  <VideoIcon className="size-3.5" /> Join
-                                </a>
-                              </Button>
-                            ) : null}
                           </div>
                           <div className="shrink-0 text-right">
                             <span className="block text-xs font-medium text-muted-foreground">
